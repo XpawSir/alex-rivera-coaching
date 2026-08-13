@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Rivera Coaching | Bli den bästa versionen av dig själv</title>
+    <title>Alex Rivera Coaching | Sustainable Fat Loss & Transformation</title>
     <style>
-        /* Grundläggande styling & Färger */
+        /* Color Palette & Base Styles */
         :root {
-            --primary-color: #1e3a8a; /* Mörkblå */
-            --accent-color: #d97706;  /* Varm guld/orange */
+            --primary-color: #0f172a; /* Slate Dark */
+            --accent-color: #e11d48;  /* Energetic Crimson Red */
+            --accent-hover: #be123c;
             --bg-light: #f8fafc;
-            --text-dark: #1f2937;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
             --text-light: #ffffff;
         }
 
@@ -18,7 +20,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
 
         body {
@@ -27,10 +29,10 @@
             line-height: 1.6;
         }
 
-        /* Navigering */
+        /* Navigation */
         header {
             background-color: var(--text-light);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -47,21 +49,26 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 800;
             color: var(--primary-color);
             text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
-            font-weight: 500;
+            font-weight: 600;
             transition: color 0.3s;
         }
 
@@ -69,84 +76,111 @@
             color: var(--accent-color);
         }
 
-        /* Hero Sektion */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), 
-                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), 
+                        url('https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             color: var(--text-light);
             text-align: center;
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
+            font-size: 1.25rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto;
+            color: #cbd5e1;
         }
 
         .btn {
             display: inline-block;
             background-color: var(--accent-color);
             color: var(--text-light);
-            padding: 0.8rem 2rem;
-            border-radius: 5px;
+            padding: 1rem 2.2rem;
+            border-radius: 6px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: background 0.3s, transform 0.2s;
             border: none;
             cursor: pointer;
         }
 
         .btn:hover {
-            background-color: #b45309;
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
         }
 
-        /* Sektioner */
+        /* Container & Section Titles */
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2.5rem;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
             color: var(--primary-color);
         }
 
-        /* Tjänster Grid */
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
         .service-card {
             background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
             text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
         }
 
         .service-card h3 {
             margin-bottom: 1rem;
+            font-size: 1.3rem;
             color: var(--primary-color);
         }
 
-        /* Kontaktformulär */
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        /* Contact Form */
         .contact-section {
             background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
             padding: 3rem;
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
@@ -158,20 +192,28 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
+            color: var(--primary-color);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 0.9rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
             font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-color);
         }
 
         .form-group textarea {
             resize: vertical;
-            height: 120px;
+            height: 130px;
         }
 
         /* Footer */
@@ -179,89 +221,101 @@
             background-color: var(--primary-color);
             color: var(--text-light);
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             margin-top: 4rem;
+        }
+
+        footer p {
+            color: #94a3b8;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigering -->
+    <!-- Navigation -->
     <header>
         <nav>
-            <a href="#" class="logo">Alex Rivera Coaching</a>
+            <a href="#" class="logo">Alex Rivera <span>Coaching</span></a>
             <ul class="nav-links">
-                <li><a href="#om">Om mig</a></li>
-                <li><a href="#tjanster">Tjänster</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Programs</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Sektion -->
+    <!-- Hero Section -->
     <section class="hero">
-        <h1>Nå din fulla potential med rätt coaching</h1>
-        <p>Jag hjälper dig att bryta genom hinder, sätta tydliga mål och skape en hållbar förändring i ditt liv och din karriär.</p>
-        <a href="#kontakt" class="btn">Boka en kostnadsfri konsultation</a>
+        <h1>Transform Your Body.<br>Keep the Results.</h1>
+        <p>Custom fat loss coaching designed to help you shed body fat, build confidence, and create sustainable habits without extreme diets.</p>
+        <a href="#contact" class="btn">Apply for 1-on-1 Coaching</a>
     </section>
 
-    <!-- Om mig -->
-    <section id="om" class="container">
-        <h2 class="section-title">Om Alex Rivera</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto;">
-            Som certifierad coach är min passion att hjälpa individer att hitta sin inre drivkraft. Genom beprövade metoder och personligt anpassade samtal arbetar vi tillsammans för att du ska nå dina uppsatta mål – oavsett om det handlar om personlig utveckling, karriärkliv eller hälsa.
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="section-title">Meet Alex Rivera</h2>
+        <p class="section-subtitle">No fad diets. No endless cardio. Just proven, science-based fat loss coaching tailored to your lifestyle.</p>
+        <p style="text-align: center; max-width: 750px; margin: 0 auto; color: var(--text-muted);">
+            As a dedicated fat loss coach, my mission is to help you achieve long-term physical transformation. We focus on flexible nutrition, effective strength training, and behavioral habits that fit into your daily life—so you can drop fat and keep it off for good.
         </p>
     </section>
 
-    <!-- Tjänster -->
-    <section id="tjanster" style="background-color: #f1f5f9; padding: 4rem 0;">
-        <div class="container">
-            <h2 class="section-title">Mina Tjänster</h2>
+    <!-- Services / Programs Section -->
+    <section id="services" style="background-color: #f1f5f9; padding: 5rem 0;">
+        <div class="container" style="padding-top: 0; padding-bottom: 0;">
+            <h2 class="section-title">Coaching Programs</h2>
+            <p class="section-subtitle">Choose the level of guidance you need to reach your goals.</p>
+            
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Karriärcoaching</h3>
-                    <p>Ta nästa steg i arbetslivet. Vi fokuserar på dina styrkor, cv-optimering och strategier för att nå din drömroll.</p>
+                    <h3>1-on-1 Online Coaching</h3>
+                    <p>Fully personalized workout & nutrition guidance, weekly check-ins, macro adjustments, and 24/7 direct access to me for complete accountability.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Personlig Utveckling</h3>
-                    <p>Identifiera begränsande tankemönster, stärk ditt självförtroende och hitta en bättre balans i vardagen.</p>
+                    <h3>Custom Nutrition Plan</h3>
+                    <p>Tailored macro targets and flexible meal guides tailored to your food preferences, dietary needs, and lifestyle.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Ledarcoaching</h3>
-                    <p>För dig som vill utveckla ditt ledarskap, kommunicera mer effektivt och leda ditt team mot framgång.</p>
+                    <h3>Fat Loss Workout Protocol</h3>
+                    <p>A structured, science-backed resistance training routine built to optimize fat loss, retain muscle, and fit your weekly schedule.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Kontaktformulär -->
-    <section id="kontakt" class="container">
-        <h2 class="section-title">Ta Första Steget – Kontakta Mig</h2>
+    <!-- Contact Form Section -->
+    <section id="contact" class="container">
+        <h2 class="section-title">Ready to Start Your Transformation?</h2>
+        <p class="section-subtitle">Fill out the form below to apply for coaching or ask any questions.</p>
+
         <div class="contact-section">
-            <!-- Tips: Använd Formspree.io eller liknande i 'action' för att ta emot mailen på riktigt -->
             <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                 <div class="form-group">
-                    <label for="name">Namn</label>
-                    <input type="text" id="name" name="name" required placeholder="Ditt namn">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="John Doe">
                 </div>
                 <div class="form-group">
-                    <label for="email">E-postadress</label>
-                    <input type="email" id="email" name="email" required placeholder="din.epost@exempel.se">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="john@example.com">
                 </div>
                 <div class="form-group">
-                    <label for="message">Meddelande</label>
-                    <textarea id="message" name="message" required placeholder="Berätta kort vad du vill ha hjälp med..."></textarea>
+                    <label for="goal">Your Primary Goal</label>
+                    <input type="text" id="goal" name="goal" placeholder="e.g., Lose 10kg, build muscle, improve habit sustainability">
                 </div>
-                <button type="submit" class="btn" style="width: 100%;">Skicka meddelande</button>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Tell me a bit about your current routine and what you want to achieve..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Submit Application</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Alex Rivera Coaching. Alla rättigheter förbehållna.</p>
+        <p>&copy; 2026 Alex Rivera Coaching. All rights reserved.</p>
     </footer>
 
 </body>
 </html>
-
