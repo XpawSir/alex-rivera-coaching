@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +12,25 @@
             --accent-color: #e11d48;  /* Energetic Crimson Red */
             --accent-hover: #be123c;
             --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --section-alt-bg: #f1f5f9;
             --text-dark: #1e293b;
             --text-muted: #64748b;
             --text-light: #ffffff;
+            --border-color: #e2e8f0;
+            --header-bg: #ffffff;
+        }
+
+        /* Dark Theme Variables */
+        body.dark-mode {
+            --primary-color: #38bdf8; /* Soft Sky Blue for headings in dark mode */
+            --bg-light: #0f172a;       /* Dark slate main background */
+            --card-bg: #1e293b;       /* Darker card background */
+            --section-alt-bg: #111827;/* Secondary dark background */
+            --text-dark: #f1f5f9;     /* Light text */
+            --text-muted: #94a3b8;    /* Muted gray-blue text */
+            --border-color: #334155;   /* Subtle dark borders */
+            --header-bg: #1e293b;     /* Dark header bar */
         }
 
         * {
@@ -27,15 +44,17 @@
             color: var(--text-dark);
             background-color: var(--bg-light);
             line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         /* Navigation */
         header {
-            background-color: var(--text-light);
+            background-color: var(--header-bg);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: background-color 0.3s;
         }
 
         nav {
@@ -50,13 +69,19 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--primary-color);
+            color: var(--text-dark);
             text-decoration: none;
             letter-spacing: -0.5px;
         }
 
         .logo span {
             color: var(--accent-color);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
         .nav-links {
@@ -76,6 +101,26 @@
             color: var(--accent-color);
         }
 
+        /* Theme Toggle Button */
+        .theme-toggle-btn {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-dark);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle-btn:hover {
+            border-color: var(--accent-color);
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), 
@@ -85,7 +130,6 @@
             padding: 6rem 2rem;
         }
 
-        /* Price Tag Badge */
         .price-badge {
             display: inline-block;
             background-color: rgba(225, 29, 72, 0.2);
@@ -105,6 +149,7 @@
             font-weight: 800;
             margin-bottom: 1.2rem;
             line-height: 1.2;
+            color: #ffffff;
         }
 
         .hero p {
@@ -164,14 +209,13 @@
         }
 
         .service-card {
-            background: white;
+            background: var(--card-bg);
             padding: 2.5rem 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
             text-align: center;
-            transition: transform 0.3s;
-            position: relative;
+            transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
         }
 
         .service-card:hover {
@@ -198,13 +242,14 @@
 
         /* Contact Form */
         .contact-section {
-            background-color: white;
+            background-color: var(--card-bg);
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--border-color);
             padding: 3rem;
             max-width: 650px;
             margin: 0 auto;
+            transition: background-color 0.3s, border-color 0.3s;
         }
 
         .form-group {
@@ -215,18 +260,20 @@
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: var(--primary-color);
+            color: var(--text-dark);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 0.9rem;
-            border: 1px solid #cbd5e1;
+            border: 1px solid var(--border-color);
             border-radius: 6px;
             font-size: 1rem;
             outline: none;
-            transition: border-color 0.3s;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            transition: border-color 0.3s, background-color 0.3s, color 0.3s;
         }
 
         .form-group input:focus,
@@ -241,7 +288,7 @@
 
         /* Footer */
         footer {
-            background-color: var(--primary-color);
+            background-color: #0b1120;
             color: var(--text-light);
             text-align: center;
             padding: 2.5rem 2rem;
@@ -260,11 +307,16 @@
     <header>
         <nav>
             <a href="#" class="logo">Alex Rivera <span>Coaching</span></a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Programs</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Programs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle-btn" id="themeToggle">
+                    <span id="themeIcon">🌙</span> <span id="themeText">Dark</span>
+                </button>
+            </div>
         </nav>
     </header>
 
@@ -286,7 +338,7 @@
     </section>
 
     <!-- Services / Programs Section -->
-    <section id="services" style="background-color: #f1f5f9; padding: 5rem 0;">
+    <section id="services" style="background-color: var(--section-alt-bg); padding: 5rem 0; transition: background-color 0.3s;">
         <div class="container" style="padding-top: 0; padding-bottom: 0;">
             <h2 class="section-title">Coaching Programs</h2>
             <p class="section-subtitle">Choose the level of guidance you need to reach your goals.</p>
@@ -334,7 +386,7 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" required placeholder="Tell me a bit about your current routine and what you want to achieve..."></textarea>
                 </div>
-                <button type="submit" class="btn" style="width: 100%;">Send</button>
+                <button type="submit" class="btn" style="width: 100%;">Submit</button>
             </form>
         </div>
     </section>
@@ -343,6 +395,25 @@
     <footer>
         <p>&copy; 2026 Alex Rivera Coaching. All rights reserved.</p>
     </footer>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                themeIcon.textContent = '☀️';
+                themeText.textContent = 'Light';
+            } else {
+                themeIcon.textContent = '🌙';
+                themeText.textContent = 'Dark';
+            }
+        });
+    </script>
 
 </body>
 </html>
