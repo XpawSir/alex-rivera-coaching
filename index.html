@@ -1,1 +1,267 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Rivera Coaching | Bli den bästa versionen av dig själv</title>
+    <style>
+        /* Grundläggande styling & Färger */
+        :root {
+            --primary-color: #1e3a8a; /* Mörkblå */
+            --accent-color: #d97706;  /* Varm guld/orange */
+            --bg-light: #f8fafc;
+            --text-dark: #1f2937;
+            --text-light: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        /* Navigering */
+        header {
+            background-color: var(--text-light);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Sektion */
+        .hero {
+            background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.85)), 
+                        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: var(--text-light);
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b45309;
+        }
+
+        /* Sektioner */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Tjänster Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Kontaktformulär */
+        .contact-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            padding: 3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigering -->
+    <header>
+        <nav>
+            <a href="#" class="logo">Alex Rivera Coaching</a>
+            <ul class="nav-links">
+                <li><a href="#om">Om mig</a></li>
+                <li><a href="#tjanster">Tjänster</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Sektion -->
+    <section class="hero">
+        <h1>Nå din fulla potential med rätt coaching</h1>
+        <p>Jag hjälper dig att bryta genom hinder, sätta tydliga mål och skape en hållbar förändring i ditt liv och din karriär.</p>
+        <a href="#kontakt" class="btn">Boka en kostnadsfri konsultation</a>
+    </section>
+
+    <!-- Om mig -->
+    <section id="om" class="container">
+        <h2 class="section-title">Om Alex Rivera</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+            Som certifierad coach är min passion att hjälpa individer att hitta sin inre drivkraft. Genom beprövade metoder och personligt anpassade samtal arbetar vi tillsammans för att du ska nå dina uppsatta mål – oavsett om det handlar om personlig utveckling, karriärkliv eller hälsa.
+        </p>
+    </section>
+
+    <!-- Tjänster -->
+    <section id="tjanster" style="background-color: #f1f5f9; padding: 4rem 0;">
+        <div class="container">
+            <h2 class="section-title">Mina Tjänster</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Karriärcoaching</h3>
+                    <p>Ta nästa steg i arbetslivet. Vi fokuserar på dina styrkor, cv-optimering och strategier för att nå din drömroll.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Personlig Utveckling</h3>
+                    <p>Identifiera begränsande tankemönster, stärk ditt självförtroende och hitta en bättre balans i vardagen.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Ledarcoaching</h3>
+                    <p>För dig som vill utveckla ditt ledarskap, kommunicera mer effektivt och leda ditt team mot framgång.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontaktformulär -->
+    <section id="kontakt" class="container">
+        <h2 class="section-title">Ta Första Steget – Kontakta Mig</h2>
+        <div class="contact-section">
+            <!-- Tips: Använd Formspree.io eller liknande i 'action' för att ta emot mailen på riktigt -->
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="name">Namn</label>
+                    <input type="text" id="name" name="name" required placeholder="Ditt namn">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-postadress</label>
+                    <input type="email" id="email" name="email" required placeholder="din.epost@exempel.se">
+                </div>
+                <div class="form-group">
+                    <label for="message">Meddelande</label>
+                    <textarea id="message" name="message" required placeholder="Berätta kort vad du vill ha hjälp med..."></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Skicka meddelande</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Alex Rivera Coaching. Alla rättigheter förbehållna.</p>
+    </footer>
+
+</body>
+</html>
 
