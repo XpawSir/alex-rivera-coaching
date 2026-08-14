@@ -19,6 +19,8 @@
             --border-color: #e2e8f0;
             --header-bg: #ffffff;
             --logo-icon-fill: #0f172a;
+            --bmc-color: #FFDD00;     /* Buy Me a Coffee Yellow */
+            --bmc-hover: #e6c700;
         }
 
         /* Dark Theme Variables */
@@ -286,6 +288,53 @@
             font-size: 0.98rem;
         }
 
+        /* Fast-Track Payments / Buy Me A Coffee Section */
+        .payment-box {
+            background: var(--card-bg);
+            border: 2px solid var(--bmc-color);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            margin-bottom: 3rem;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .fast-badge {
+            display: inline-block;
+            background-color: var(--bmc-color);
+            color: #000000;
+            font-weight: 800;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.9rem;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .bmc-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            background-color: var(--bmc-color);
+            color: #000000;
+            font-weight: 800;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 12px rgba(255, 221, 0, 0.3);
+        }
+
+        .bmc-btn:hover {
+            background-color: var(--bmc-hover);
+            transform: translateY(-2px);
+        }
+
         /* Urgency Banner */
         .urgency-banner {
             background-color: rgba(225, 29, 72, 0.1);
@@ -389,6 +438,7 @@
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Programs</a></li>
+                    <li><a href="#payments">Payment & Access</a></li>
                     <li><a href="#testimonials">Results</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -404,7 +454,7 @@
         <div class="price-badge">🔥 Limited Time: Start for just $5.99</div>
         <h1>Transform Your Body.<br>Keep the Results.</h1>
         <p>Custom fat loss coaching designed to help you shed body fat, build confidence, and create sustainable habits without extreme diets.</p>
-        <a href="#contact" class="btn">Start Now for $5.99</a>
+        <a href="#payments" class="btn">Start Now for $5.99</a>
         
         <!-- Star Rating Badge -->
         <div class="hero-rating">
@@ -432,7 +482,7 @@
                 <div class="service-card">
                     <h3>Kickstart Trial</h3>
                     <div class="price-text">Start for just $5.99</div>
-                    <p>Get a custom fat-loss roadmap, macro calculation, and a initial 1-on-1 evaluation to jumpstart your transformation today.</p>
+                    <p>Get a custom fat-loss roadmap, macro calculation, and an initial 1-on-1 evaluation to jumpstart your transformation today.</p>
                 </div>
                 <div class="service-card">
                     <h3>1-on-1 Online Coaching</h3>
@@ -464,6 +514,23 @@
         </div>
     </section>
 
+    <!-- NEW: Fast-Track Payment Info Section -->
+    <section id="payments" class="container" style="padding-bottom: 2rem;">
+        <div class="payment-box">
+            <span class="fast-badge">⚡ Instant Priority Access</span>
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">Fast-Track Your Coaching</h2>
+            <p style="max-width: 650px; margin: 0 auto; color: var(--text-muted); font-size: 1.05rem;">
+                Want to skip the waiting line? I process payments directly through <strong>Buy Me a Coffee</strong>. For the fastest response and immediate onboarding, complete your payment directly on my page before or right after filling out the form below.
+            </p>
+            <a href="https://buymeacoffee.com/alexriveracoach" target="_blank" rel="noopener" class="bmc-btn">
+                ☕ Pay Directly on Buy Me a Coffee
+            </a>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;">
+                *Please make sure to mention your full name or email address in the payment note so I can match it instantly!
+            </p>
+        </div>
+    </section>
+
     <!-- Contact Form Section -->
     <section id="contact" class="container" style="padding-top: 0;">
         <h2 class="section-title">Ready to Start Your Transformation?</h2>
@@ -489,9 +556,9 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" name="message" required placeholder="Tell me a bit about your current routine and what you want to achieve..."></textarea>
+                    <textarea id="message" name="message" required placeholder="Tell me a bit about your current routine and whether you've already paid via Buy Me a Coffee..."></textarea>
                 </div>
-                <button type="submit" class="btn" style="width: 100%;">Submit</button>
+                <button type="submit" class="btn" style="width: 100%;">Submit Inquiry</button>
             </form>
         </div>
     </section>
@@ -510,7 +577,7 @@
                 data-color="#FF5F5F" 
                 data-emoji="🚀" 
                 data-font="Lato" 
-                data-text="Claim the $5,99 Offer Now" 
+                data-text="Claim the $5.99 Offer Now" 
                 data-outline-color="#000000" 
                 data-font-color="#ffffff" 
                 data-coffee-color="#FFDD00">
