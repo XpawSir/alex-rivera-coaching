@@ -27,10 +27,10 @@
             --bg-light: #0f172a;       /* Dark slate main background */
             --card-bg: #1e293b;       /* Darker card background */
             --section-alt-bg: #111827;/* Secondary dark background */
-            --text-dark: #f1f5f9;     /* Light text */
+            --text-dark: #f1f5f9;      /* Light text */
             --text-muted: #94a3b8;    /* Muted gray-blue text */
             --border-color: #334155;   /* Subtle dark borders */
-            --header-bg: #1e293b;     /* Dark header bar */
+            --header-bg: #1e293b;      /* Dark header bar */
             --logo-icon-fill: #ffffff;
         }
 
@@ -358,6 +358,14 @@
             color: #94a3b8;
             font-size: 0.9rem;
         }
+
+        /* Floating Buy Me a Coffee Button Style */
+        .floating-bmc-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+        }
     </style>
 </head>
 <body>
@@ -492,6 +500,22 @@
     <footer>
         <p>&copy; 2026 Alex Rivera Coaching. All rights reserved.</p>
     </footer>
+
+    <!-- Floating Buy Me a Coffee Button Widget -->
+    <div class="floating-bmc-button">
+        <script type="text/javascript" 
+                src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" 
+                data-name="bmc-button" 
+                data-slug="alexriveracoach" 
+                data-color="#FF5F5F" 
+                data-emoji="🚀" 
+                data-font="Lato" 
+                data-text="Claim the $5,99 Offer Now" 
+                data-outline-color="#000000" 
+                data-font-color="#ffffff" 
+                data-coffee-color="#FFDD00">
+        </script>
+    </div>
 
     <!-- Dark Mode Toggle Script -->
     <script>
