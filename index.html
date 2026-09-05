@@ -7,8 +7,8 @@
     <style>
         /* Color Palette & Base Styles */
         :root {
-            --primary-color: #0f172a; /* Slate Dark */
-            --accent-color: #e11d48;  /* Energetic Crimson Red */
+            --primary-color: #0f172a;
+            --accent-color: #e11d48;
             --accent-hover: #be123c;
             --bg-light: #f8fafc;
             --card-bg: #ffffff;
@@ -19,20 +19,20 @@
             --border-color: #e2e8f0;
             --header-bg: #ffffff;
             --logo-icon-fill: #0f172a;
-            --bmc-color: #FFDD00;     /* Buy Me a Coffee Yellow */
+            --bmc-color: #FFDD00;
             --bmc-hover: #e6c700;
         }
 
         /* Dark Theme Variables */
         body.dark-mode {
-            --primary-color: #38bdf8; /* Soft Sky Blue for headings in dark mode */
-            --bg-light: #0f172a;       /* Dark slate main background */
-            --card-bg: #1e293b;       /* Darker card background */
-            --section-alt-bg: #111827;/* Secondary dark background */
-            --text-dark: #f1f5f9;      /* Light text */
-            --text-muted: #94a3b8;    /* Muted gray-blue text */
-            --border-color: #334155;   /* Subtle dark borders */
-            --header-bg: #1e293b;      /* Dark header bar */
+            --primary-color: #38bdf8;
+            --bg-light: #0f172a;
+            --card-bg: #1e293b;
+            --section-alt-bg: #111827;
+            --text-dark: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --header-bg: #1e293b;
             --logo-icon-fill: #ffffff;
         }
 
@@ -135,7 +135,6 @@
             color: var(--accent-color);
         }
 
-        /* Mobile Hamburger Button */
         .mobile-menu-btn {
             display: none;
             background: transparent;
@@ -147,7 +146,6 @@
             line-height: 1;
         }
 
-        /* Theme Toggle Button */
         .theme-toggle-btn {
             background: transparent;
             border: 2px solid var(--border-color);
@@ -205,7 +203,6 @@
             color: #cbd5e1;
         }
 
-        /* Hero Direct Purchase Card Above Fold */
         .hero-checkout-card {
             background: rgba(30, 41, 59, 0.85);
             border: 2px solid var(--bmc-color);
@@ -263,7 +260,6 @@
             font-weight: 600;
         }
 
-        /* Hero Rating Badge */
         .hero-rating {
             margin-top: 1rem;
             font-size: 0.85rem;
@@ -277,11 +273,10 @@
         }
 
         .stars {
-            color: #f59e0b; /* Bright amber gold */
+            color: #f59e0b;
             letter-spacing: 2px;
         }
 
-        /* Container & Section Titles */
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -304,7 +299,267 @@
             margin: 0 auto 2.5rem auto;
         }
 
-        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 2rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s, background-color 0.3s, border-color 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+        }
+
+        .price-text {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            padding: 0.9rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            width: auto;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .urgency-banner {
+            background-color: rgba(225, 29, 72, 0.1);
+            border: 1px dashed var(--accent-color);
+            color: var(--accent-color);
+            text-align: center;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+            padding: 2rem 1.25rem;
+            max-width: 650px;
+            margin: 0 auto;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 16px;
+            outline: none;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        footer {
+            background-color: #0b1120;
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem 1.25rem 5rem 1.25rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* Pure CSS Custom Floating Button (No external JS dependency) */
+        .floating-bmc-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background-color: var(--bmc-color);
+            color: #000000;
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .floating-bmc-link:hover {
+            transform: scale(1.05);
+            background-color: var(--bmc-hover);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--header-bg);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-in-out;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .nav-links.active {
+                max-height: 300px;
+                padding: 1rem 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 0.75rem 1rem;
+                font-size: 1.05rem;
+            }
+
+            .contact-section .btn {
+                width: 100%;
+            }
+
+            .floating-bmc-link {
+                bottom: 12px;
+                right: 12px;
+                font-size: 0.85rem;
+                padding: 0.65rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo-container">
+                <svg class="logo-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" rx="20" fill="var(--accent-color)"/>
+                    <path d="M50 18L80 78H62L50 52L38 78H20L50 18Z" fill="#FFFFFF"/>
+                    <path d="M50 36L64 66H55L50 55L45 66H36L50 36Z" fill="var(--logo-icon-fill)"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="logo-title">Alex Rivera</span>
+                    <span class="logo-subtitle">Coaching</span>
+                </div>
+            </a>
+
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about" class="nav-item">About</a></li>
+                    <li><a href="#services" class="nav-item">Programs</a></li>
+                    <li><a href="#testimonials" class="nav-item">Results</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
+                </ul>
+
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">
+                    <span id="themeIcon">🌙</span> <span id="themeText">Dark</span>
+                </button>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+                    ☰
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="price-badge">⚡ Instant Access — Only $5.99 Today</div>
+        <h1>Custom 7-Day Fat Loss Jumpstart<br>& Macro Blueprint</h1>
+        <p>Get your personalized fat-loss roadmap, custom macros, and direct 1-on-1 feedback delivered straight to your inbox in <strong>under 2 hours</strong>.</p>
+        
+        <div class="hero-checkout-card">
+            <div class="hero-checkout-title">🚀 Fast-Track Your Transformation</div>
+            <div class="hero-checkout-sub">Instant onboarding • Instant priority processing</div>
+            <a href="https://buymeacoffee.com/alexriveracoach" target="_blank" rel="noopener" class="hero-bmc-btn">
+                ☕ Get Yours Instantly for $5.99
+            </a>
+            <div class="guarantee-text">
+                🛡️ 100% Risk-Free — Love your plan or get a full refund
+            </div>
+        </div>
+        
+        <div class="hero-rating">
+            <span class="stars">★★★★★</span>
+            <span>5.0 Rating from 20+ Happy Clients</span>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title">Meet Alex Rivera</h2>
+        <p class="section-subtitle">No fad diets. No endless cardio. Just proven, science-based
